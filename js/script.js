@@ -13,3 +13,11 @@ dei numeri da indovinare sono stati individuati.
 //faccio un terzo for che si ferma sempre a 5, e con un if confronta le stringhe dei due array, quelli uguali in un terzo array
 //restituisco un messaggio con terzoarray.length e elementi del terzo array
 
+let numericasuali = [];
+let numeriutente = [];
+let numeriindovinati = [];
+
+for (let i = 0; i < 5; i++) {
+    numericasuali.push(Math.floor(Math.random() * 10) + 1);
+}
+console.log(numericasuali);
