@@ -13,11 +13,22 @@ dei numeri da indovinare sono stati individuati.
 //faccio un terzo for che si ferma sempre a 5, e con un if confronta le stringhe dei due array, quelli uguali in un terzo array
 //restituisco un messaggio con terzoarray.length e elementi del terzo array
 
-let numericasuali = [];
+//creo i 3 array che mi serviranno nello script.
+let numericas = [];
 let numeriutente = [];
 let numeriindovinati = [];
 
+//creo il contenuto dell'array da memorizzare, con numeri compresi tra 1 e 10, e li stampo in html.
 for (let i = 0; i < 5; i++) {
-    numericasuali.push(Math.floor(Math.random() * 10) + 1);
+    numericas.push(Math.floor(Math.random() * 10) + 1);
 }
-console.log(numericasuali);
+console.log(numericas);
+
+arraydemo = document.querySelector('.container');
+arraydemo.innerHTML = `<h2>${numericas}</h2>`;
+
+//creo la funzione che li fa sparire
+
+
+
+
