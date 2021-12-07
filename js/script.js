@@ -16,6 +16,8 @@ dei numeri da indovinare sono stati individuati.
 //creo i 3 array che mi serviranno nello script.
 let numericas = [];
 let numeriutente = [];
+let numeriindovinati = [];
+let quantitaindovinata = 0;
 
 //creo il contenuto dell'array da memorizzare, con numeri compresi tra 1 e 10, e li stampo in html.
 for (let i = 0; i < 5; i++) {
@@ -41,7 +43,7 @@ let timer = setInterval(() =>{
             console.log(numbz);
             numeriutente.push(numbz);
         }
-    }
+    }    
 }, 1000);
 
 /*
@@ -52,20 +54,15 @@ stampo in html i numeri indovinati e quanti sono
 La variabile quantitaind. sarebbe omettibile, basterebbe fare un numeriindovinati.length
 */
 
-function checknumber(array1, array2) {
-    numeriindovinati = [];
+setTimeout(function(){
     for (let i = 0; i < 5; i++) {
-        if (array1[i] == array2[i]) {
-            numeriindovinati.push(array1[i]);
+        if (numeriutente[i] == numericas[i]) {
+            numeriindovinati.push(numeriutente[i]);
         }
-        console.log('hai indovinato ', numeriindovinati.length, ' numeri. Sono i seguenti: ', numeriindovinati);
     }
-    console.log(numeriindovinati);
-    return numeriindovinati;
-}
-
-console.log(checknumber(numericas, numeriutente));
-
+    console.log('hai indovinato ',numeriindovinati.length,' numeri. Sono i seguenti: ', numeriindovinati);
+    
+}, 10500);
 
 
 
