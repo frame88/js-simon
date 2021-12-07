@@ -16,8 +16,6 @@ dei numeri da indovinare sono stati individuati.
 //creo i 3 array che mi serviranno nello script.
 let numericas = [];
 let numeriutente = [];
-let numeriindovinati = [];
-let quantitaindovinata = 0;
 
 //creo il contenuto dell'array da memorizzare, con numeri compresi tra 1 e 10, e li stampo in html.
 for (let i = 0; i < 5; i++) {
@@ -32,30 +30,46 @@ arraydemo.innerHTML = `<h2>${numericas}</h2>`;
 let seconds = 3;
 let timer = setInterval(() =>{
     if (seconds > 0) {
-        console.log(seconds);
-        seconds-=1;
+        console.log('second',seconds);
+        seconds -= 1;
     }
     else {
         arraydemo.innerHTML = '';
         clearInterval(timer);
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             let numbz = parseInt(prompt('inserisci un numero alla volta: '));
             console.log(numbz);
             numeriutente.push(numbz);
         }
     }
-
 }, 1000);
 
 /*
-
-creo un ciclo annidato che confronta i numeri in numericas e numeriutente, se combaciano e non sono
-presenti in numeriindovinati ce li pusho e quantitaindovinata += 1
+creo un ciclo che confronta i numeri in numericas e numeriutente, se combaciano e non sono
+presenti in numeriindovinati ce li pusho
 dopodichè
 stampo in html i numeri indovinati e quanti sono 
 La variabile quantitaind. sarebbe omettibile, basterebbe fare un numeriindovinati.length
-
 */
+
+function checknumber(array1, array2) {
+    numeriindovinati = [];
+    for (let i = 0; i < 5; i++) {
+        if (array1[i] == array2[i]) {
+            numeriindovinati.push(array1[i]);
+        }
+        console.log('hai indovinato ', numeriindovinati.length, ' numeri. Sono i seguenti: ', numeriindovinati);
+    }
+    console.log(numeriindovinati);
+    return numeriindovinati;
+}
+
+console.log(checknumber(numericas, numeriutente));
+
+
+
+
+
 
 
 
