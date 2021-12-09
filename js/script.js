@@ -59,8 +59,14 @@ setTimeout(function (){
         }
     }
     console.log('hai indovinato ',numeriindovinati.length,' numeri. Sono i seguenti: ', numeriindovinati);
-    arraydemo.innerHTML = `Hai indovinato ${numeriindovinati.length} numeri. Sono i seguenti: ${numeriindovinati}`;
-    }, 32500);
+    if (numeriindovinati.length > 0){
+        arraydemo.innerHTML = `<h2>Hai indovinato ${numeriindovinati.length} numeri. Sono i seguenti: ${numeriindovinati}</h2>`;
+    }
+    else {
+        arraydemo.innerHTML = `<h2>Non hai indovinato nessun numero, i numeri erano ${numericas}</h2>`;        
+    }
+}, 32500);
+
 }, 1000);
     
   /*
