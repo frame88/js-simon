@@ -30,7 +30,7 @@ arraydemo.innerHTML = `<h2>${numericas}</h2>`;
 
 //creo la funzione che li fa sparire, con countdown di 30s
 let seconds = 3;
-let timer = setInterval(() =>{
+let timer = setInterval(() => {
     if (seconds > 0) {
         console.log('second',seconds);
         seconds -= 1;
@@ -43,7 +43,7 @@ let timer = setInterval(() =>{
             console.log(numbz);
             numeriutente.push(numbz);
         }
-    }    
+    } 
 }, 1000);
 
 /*
