@@ -28,41 +28,47 @@ console.log(numericas);
 arraydemo = document.querySelector('.container');
 arraydemo.innerHTML = `<h2>${numericas}</h2>`;
 
-//creo la funzione che li fa sparire, con countdown di 30s
-let seconds = 3;
-let timer = setInterval(() => {
-    if (seconds > 0) {
-        console.log('second',seconds);
-        seconds -= 1;
-    }
-    else {
-        arraydemo.innerHTML = '';
-        clearInterval(timer);
-        for (let i = 0; i < 5; i++) {
-            let numbz = parseInt(prompt('inserisci un numero alla volta: '));
-            console.log(numbz);
-            numeriutente.push(numbz);
+setTimeout( function (){
+    //creo la funzione che li fa sparire, con countdown di 30s
+    let seconds = 30;
+    let timer = setInterval(() => {
+        if (seconds > 0) {
+            console.log('second',seconds);
+            seconds -= 1;
         }
-    } 
+        else {
+            arraydemo.innerHTML = '';
+            clearInterval(timer);
+        }
 }, 1000);
 
-/*
-creo un ciclo che confronta i numeri in numericas e numeriutente, se combaciano e non sono
-presenti in numeriindovinati ce li pusho
-dopodichè
-stampo in html i numeri indovinati e quanti sono 
-La variabile quantitaind. sarebbe omettibile, basterebbe fare un numeriindovinati.length
-*/
+setTimeout(function (){
+    for (let i = 0; i < 5; i++) {
+        let numbz = parseInt(prompt('inserisci un numero alla volta: '));
+        console.log(numbz);
+        numeriutente.push(numbz);
+    }
 
-setTimeout(function(){
     for (let i = 0; i < 5; i++) {
         if (numeriutente[i] == numericas[i]) {
             numeriindovinati.push(numeriutente[i]);
         }
     }
     console.log('hai indovinato ',numeriindovinati.length,' numeri. Sono i seguenti: ', numeriindovinati);
+    arraydemo.innerHTML = `Hai indovinato ${numeriindovinati.length} numeri. Sono i seguenti: ${numeriindovinati}`;
+    }, 32500);
+}, 1000);
     
-}, 10500);
+    /*
+    creo un ciclo che confronta i numeri in numericas e numeriutente, se combaciano e non sono
+    presenti in numeriindovinati ce li pusho
+    dopodichè
+    stampo in html i numeri indovinati e quanti sono 
+    La variabile quantitaind. sarebbe omettibile, basterebbe fare un numeriindovinati.length
+    */
+    
+
+
 
 
 
