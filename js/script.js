@@ -20,9 +20,13 @@ let numeriindovinati = [];
 let quantitaindovinata = 0;
 
 //creo il contenuto dell'array da memorizzare, con numeri compresi tra 1 e 10, e li stampo in html.
-for (let i = 0; i < 5; i++) {
-    numericas.push(Math.floor(Math.random() * 10) + 1);
+while (numericas.length < 5) {
+    let num = (Math.floor(Math.random() * 20) + 1);
+    if (!numericas.includes(num)) {
+        numericas.push(num);
+    }
 }
+
 console.log(numericas);
 
 arraydemo = document.querySelector('.container');
@@ -59,14 +63,15 @@ setTimeout(function (){
     }, 32500);
 }, 1000);
     
-    /*
-    creo un ciclo che confronta i numeri in numericas e numeriutente, se combaciano e non sono
-    presenti in numeriindovinati ce li pusho
-    dopodichè
-    stampo in html i numeri indovinati e quanti sono 
-    La variabile quantitaind. sarebbe omettibile, basterebbe fare un numeriindovinati.length
-    */
-    
+  /*
+  nella consegna non era noto se ci potessero essere dei doppioni nei numeri generati casualmente,
+  non era noto se i numeri inseriti dall'utente dovessero essere inseriti nell'ordine in cui sono stati mostrati in pagina.
+  
+  Io ho fatto in modo che i numeri generati randomicamente dovessero essere unici, e che l'utente dovesse indovinare anche l'ordine."
+
+*/
+
+
 
 
 
