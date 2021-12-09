@@ -26,7 +26,7 @@ for (let i = 0; i < 5; i++) {
 console.log(numericas);
 
 arraydemo = document.querySelector('.container');
-arraydemo.innerHTML = `<h2>${numericas}</h2>`;
+arraydemo.innerHTML = `<h2>${numericas[0]} &nbsp ${numericas[1]} &nbsp ${numericas[2]} &nbsp ${numericas[3]} &nbsp ${numericas[4]} </h2>`;
 
 setTimeout( function (){
     //creo la funzione che li fa sparire, con countdown di 30s
